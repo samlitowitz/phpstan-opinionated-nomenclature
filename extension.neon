@@ -1,0 +1,5 @@
+services:
+	-
+		class: Opinionated\Nomenclature\PHPStan\Rules\Interface_\NoIPrefix
+		tags:
+			- phpstan.rules.rule

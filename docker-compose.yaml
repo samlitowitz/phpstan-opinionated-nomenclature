@@ -1,0 +1,40 @@
+services:
+    php74:
+        image: mobtitude/php-xdebug:7.4-cli
+        entrypoint: [ "/usr/local/bin/php" ]
+        working_dir: "/app"
+        env_file:
+            - ./docker/php/.env
+        network_mode: "host"
+        ports:
+            - "9000:9000"
+        user: "${DOCKER_USER}"
+        volumes:
+            - ./:/app
+            - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug2.ini
+
+    php80:
+        image: mobtitude/php-xdebug:8.0-cli
+        entrypoint: [ "/usr/local/bin/php" ]
+        working_dir: "/app"
+        env_file:
+            - ./docker/php/.env
+        ports:
+            - "9000:9000"
+        user: "${DOCKER_USER}"
+        volumes:
+            - ./:/app
+            - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug3.ini
+
+    php81:
+        image: mobtitude/php-xdebug:8.1-cli
+        entrypoint: [ "/usr/local/bin/php" ]
+        working_dir: "/app"
+        env_file:
+            -   ./docker/php/.env
+        ports:
+            - "9000:9000"
+        user: "${DOCKER_USER}"
+        volumes:
+            - ./:/app
+            - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug3.ini
