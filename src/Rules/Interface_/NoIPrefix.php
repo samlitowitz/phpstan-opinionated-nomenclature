@@ -20,17 +20,9 @@ final class NoIPrefix implements Rule
         return Interface_::class;
     }
 
-    /**
-     * @param Node $node
-     * @param Scope $scope
-     * @return \PHPStan\Rules\IdentifierRuleError[]
-     * @throws \PHPStan\ShouldNotHappenException
-     */
     public function processNode(Node $node, Scope $scope): array
     {
-        if (!($node instanceof Interface_)) {
-            return [];
-        }
+        /** @var Interface_ $node */
         $ident = $node->name;
         if (is_null($ident)) {
             return [];

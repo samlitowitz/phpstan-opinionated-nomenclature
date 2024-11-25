@@ -1,9 +1,17 @@
 <?php
 
-interface Writer {}
+interface Writer
+{
+}
 
-interface Iter {}
+interface Iter
+{
+}
 
-interface IMBDWriter {}
+interface IMBDWriter
+{
+}
 
-interface IWriter {}
+interface IWriter
+{
+}

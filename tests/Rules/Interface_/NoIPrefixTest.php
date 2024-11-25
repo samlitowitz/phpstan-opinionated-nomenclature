@@ -18,7 +18,7 @@ final class NoIPrefixTest extends RuleTestCase
         $this->analyse([__DIR__ . '/data/noiprefix.php'], [
             [
                 NoIPrefix::ERROR_MESSAGE,
-                9,
+                15,
             ],
         ]);
     }
