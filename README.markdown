@@ -8,6 +8,9 @@ Opinionated PHPStan rules for naming things.
 	1. [PHPStan Extension Installer](#phpstan-extension-installer)
 	2. [Manual Installation](#manual-installation)
 2. [Rules](#rules)
+	1. [Namespace](#namespace)
+	2. [Class Like (Class, Interface, Trait)](#class-like-class-interface-trait)
+	3. [Interface](#interface)
 
 ## Installation
 
@@ -35,3 +38,68 @@ includes:
 ```
 
 ## Rules
+
+### Namespace
+
+1. Namespace names MUST NOT be equal to or end in `DTO` of any case (case-insensitive)
+
+   ```php
+   <?php
+   namespace DTO; // bad
+   namespace Client\Dto; // bad
+   ```
+
+2. Namespace names MUST NOT be equal to `Helper` of any case (case-insensitive)
+
+   ```php
+   <?php
+   namespace Helper; // bad
+   namespace Client\helper; // bad
+   ```
+
+### Class Like (Class, Interface, Trait)
+
+1. Class like names MUST NOT be equal to or end in `DTO` of any case (case-insensitive)
+
+   ```php
+   <?php
+   class DTO {} // bad
+   class ClientDTO {} // bad
+   ```
+
+2. Class like names MUST NOT be equal to `Helper` of any case (case-insensitive)
+
+   ```php
+   <?php
+   class Helper {} // bad
+   class helper {} // bad
+   ```
+
+3. Class like names MUST NOT be equal to or start with any case (case-insensitive) of the namespace name it resides in
+
+   ```php
+   <?php
+   namespace Client;
+   class ClientRequest {} // bad
+
+   namespace Client\Request;
+   class Request {} // bad
+   ```
+
+4. Class like names MUST NOT end with their type name of any case (case-insensitive)
+
+   ```php
+   <?php
+   class ClientClass {} // bad
+   interface FileInterface {} // bad
+   trait TransactionTrait {} // bad
+   ```
+
+### Interface
+
+1. Interface names MUST NOT be prefixed with `I`
+
+   ```php
+   <?php
+   interface IWriter {} // bad
+   ```
