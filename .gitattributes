@@ -16,4 +16,7 @@ phpcs.xml.dist      export-ignore
 phpunit.xml.dist    export-ignore
 phpstan.neo.dist    export-ignore
 
+docker-compose.yaml export-ignore
+Makefile            export-ignore
+
 tests               export-ignore
