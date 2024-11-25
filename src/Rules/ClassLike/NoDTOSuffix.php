@@ -13,7 +13,7 @@ use PHPStan\Rules\RuleErrorBuilder;
  */
 final class NoDTOSuffix implements Rule
 {
-    public const ERROR_MESSAGE = '';
+    public const ERROR_MESSAGE = 'No `DTO` suffix';
     private const DTO_SUFFIX = 'DTO';
 
     public function getNodeType(): string

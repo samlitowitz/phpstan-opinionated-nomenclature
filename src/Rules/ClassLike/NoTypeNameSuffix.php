@@ -13,7 +13,7 @@ use PHPStan\Rules\RuleErrorBuilder;
  */
 final class NoTypeNameSuffix implements Rule
 {
-    public const ERROR_MESSAGE = '';
+    public const ERROR_MESSAGE = 'No type name suffix';
 
     public function getNodeType(): string
     {
