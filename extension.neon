@@ -1,5 +1,37 @@
 services:
 	-
+		class: Opinionated\Nomenclature\PHPStan\Rules\Class_\ClassDeclarationCollector
+		tags:
+			- phpstan.collector
+	-
+		class: Opinionated\Nomenclature\PHPStan\Rules\Class_\FinalWithoutChildren
+		tags:
+			- phpstan.rules.rule
+	-
+		class: Opinionated\Nomenclature\PHPStan\Rules\ClassLike\NoDTOSuffix
+		tags:
+			- phpstan.rules.rule
+	-
+		class: Opinionated\Nomenclature\PHPStan\Rules\ClassLike\NoHelper
+		tags:
+			- phpstan.rules.rule
+	-
+		class: Opinionated\Nomenclature\PHPStan\Rules\ClassLike\NoStutter
+		tags:
+			- phpstan.rules.rule
+	-
+		class: Opinionated\Nomenclature\PHPStan\Rules\ClassLike\NoTypeNameSuffix
+		tags:
+			- phpstan.rules.rule
+	-
 		class: Opinionated\Nomenclature\PHPStan\Rules\Interface_\NoIPrefix
+		tags:
+			- phpstan.rules.rule
+	-
+		class: Opinionated\Nomenclature\PHPStan\Rules\Namespace_\NoDTOSuffix
+		tags:
+			- phpstan.rules.rule
+	-
+		class: Opinionated\Nomenclature\PHPStan\Rules\Namespace_\NoHelper
 		tags:
 			- phpstan.rules.rule

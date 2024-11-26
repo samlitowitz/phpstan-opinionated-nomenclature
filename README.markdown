@@ -10,7 +10,8 @@ Opinionated PHPStan rules for naming things.
 2. [Rules](#rules)
 	1. [Namespace](#namespace)
 	2. [Class Like (Class, Interface, Trait)](#class-like-class-interface-trait)
-	3. [Interface](#interface)
+	3. [Class](#class)
+	4. [Interface](#interface)
 
 ## Installation
 
@@ -93,6 +94,15 @@ includes:
    class ClientClass {} // bad
    interface FileInterface {} // bad
    trait TransactionTrait {} // bad
+   ```
+
+### Class
+
+1. No non-final classes without children
+
+   ```php
+   <?php
+   class NonFinalNoChildren {} // bad
    ```
 
 ### Interface
