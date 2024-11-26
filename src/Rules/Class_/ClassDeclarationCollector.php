@@ -2,8 +2,6 @@
 
 namespace Opinionated\Nomenclature\PHPStan\Rules\Class_;
 
-// https://phpstan.org/developing-extensions/collectors
-
 use PhpParser\Node;
 use PHPStan\Analyser\Scope;
 use PHPStan\Collectors\Collector;
