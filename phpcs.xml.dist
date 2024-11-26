@@ -7,8 +7,9 @@
     <!-- Paths to check -->
     <file>src</file>
     <file>tests</file>
-    <exclude-pattern>tests/Rules/Interface_/data</exclude-pattern>
+    <exclude-pattern>tests/Rules/Class_/data</exclude-pattern>
     <exclude-pattern>tests/Rules/ClassLike/data</exclude-pattern>
+	<exclude-pattern>tests/Rules/Interface_/data</exclude-pattern>
 
     <!-- inherit rules from: -->
     <rule ref="PSR12"/>

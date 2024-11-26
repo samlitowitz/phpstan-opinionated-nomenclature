@@ -28,15 +28,14 @@ final class FinalWithoutChildren implements Rule
         $nonFinalClasses = [];
         $parentClasses = [];
 
-        /**
-         * @var string $fqn
-         * @var string $parentName
-         * @var string $fileName
-         * @var int $line
-         */
         foreach (
             $data as $fileName => $fileData
         ) {
+            /**
+             * @var string $fqn
+             * @var string $parentName
+             * @var int $line
+             */
             foreach ($fileData as [$fqn, $parentName, $line]) {
                 $locDataByFQN[$fqn] = [$fileName, $line];
                 if (!array_key_exists($fqn, $nonFinalClasses)) {

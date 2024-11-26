@@ -10,7 +10,7 @@ use PHPStan\Collectors\Collector;
 use PHPStan\Node\InClassNode;
 
 /**
- * @implements Collector<InClassNode, array{string, string, string, int}>
+ * @implements Collector<InClassNode, array{non-empty-string, non-empty-string|null, -1|positive-int}>
  */
 final class ClassDeclarationCollector implements Collector
 {
