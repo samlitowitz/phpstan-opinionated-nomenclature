@@ -73,7 +73,6 @@ includes:
    ```php
    <?php
    class Helper {} // bad
-   class helper {} // bad
    ```
 
 3. Class like names MUST NOT be equal to or start with any case (case-insensitive) of the namespace name it resides in
