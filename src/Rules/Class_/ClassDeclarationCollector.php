@@ -3,6 +3,7 @@
 namespace Opinionated\Nomenclature\PHPStan\Rules\Class_;
 
 use PhpParser\Node;
+use PhpParser\Node\Stmt\Class_;
 use PHPStan\Analyser\Scope;
 use PHPStan\Collectors\Collector;
 use PHPStan\Node\InClassNode;
@@ -20,6 +21,11 @@ final class ClassDeclarationCollector implements Collector
     public function processNode(Node $node, Scope $scope)
     {
         /** @var InClassNode $node */
+        $originalNode = $node->getOriginalNode();
+        if (get_class($originalNode) !== Class_::class) {
+            return null;
+        }
+
         if ($node->getClassReflection()->isFinal()) {
             return null;
         }
@@ -38,12 +44,9 @@ final class ClassDeclarationCollector implements Collector
         $fqn .= $name;
 
         $parentName = null;
-        /** @var Node\Stmt\Class_ $parent */
-        $parent = $node->getOriginalNode();
-        if (!is_null($parent->extends)) {
-            $parentName = $parent->extends->toString();
+        if (!is_null($originalNode->extends)) {
+            $parentName = $originalNode->extends->toString();
         }
-
 
         return [
             $fqn,
