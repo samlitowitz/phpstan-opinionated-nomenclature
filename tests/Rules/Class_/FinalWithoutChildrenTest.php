@@ -23,15 +23,21 @@ final class FinalWithoutChildrenTest extends RuleTestCase
 
     public function testProcessNode()
     {
-        $this->analyse([__DIR__ . '/data/finalwithoutchildren.php'], [
+        $this->analyse(
             [
-                FinalWithoutChildren::ERROR_MESSAGE,
-                9,
+                __DIR__ . '/data/finalwithoutchildren.php',
+                __DIR__ . '/data/issue-1.php',
             ],
             [
-                FinalWithoutChildren::ERROR_MESSAGE,
-                17,
-            ],
-        ]);
+                [
+                    FinalWithoutChildren::ERROR_MESSAGE,
+                    9,
+                ],
+                [
+                    FinalWithoutChildren::ERROR_MESSAGE,
+                    17,
+                ],
+            ]
+        );
     }
 }
