@@ -19,4 +19,5 @@ phpstan.neon.dist   export-ignore
 docker-compose.yaml export-ignore
 Makefile            export-ignore
 
+.github             export-ignore
 tests               export-ignore
