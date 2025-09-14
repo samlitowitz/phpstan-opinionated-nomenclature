@@ -4,12 +4,21 @@ on:
     pull_request:
         branches:
             - master
+        paths:
+            - 'src/**'
+            - 'tests/**'
 
 jobs:
-    build:
+    php74:
+        name: PHP 7.4
         runs-on: ubuntu-latest
         steps:
             -   uses: actions/checkout@v4
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: '7.4'
 
             -   name: Validate composer.json
                 run: composer validate --strict
@@ -19,12 +28,12 @@ jobs:
                 uses: actions/cache@v3
                 with:
                     path: vendor
-                    key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+                    key: ${{ runner.os }}-php74-${{ hashFiles('**/composer.lock') }}
                     restore-keys: |
-                        ${{ runner.os }}-php-
+                        ${{ runner.os }}-php74-
 
             -   name: Install dependencies
                 run: composer install --prefer-dist --no-progress
 
-            - name: Run checks
-              run: composer run check
+            -   name: Run checks
+                run: composer run check
