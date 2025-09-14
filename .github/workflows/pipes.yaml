@@ -1,4 +1,4 @@
-name: PHPStan Opinionated Nomenclature
+name: Pipes
 
 on:
     pull_request:
