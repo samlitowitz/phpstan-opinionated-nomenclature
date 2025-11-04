@@ -11,9 +11,6 @@
     ],
     "minimum-stability": "stable",
     "config": {
-        "platform": {
-            "php": "7.4"
-        },
         "sort-packages": true
     },
     "extra": {
@@ -34,7 +31,7 @@
         }
     },
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^8.0",
         "phpstan/phpstan": "^2.0"
     },
     "require-dev": {
