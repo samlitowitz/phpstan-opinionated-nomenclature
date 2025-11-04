@@ -35,3 +35,7 @@ services:
 		class: Opinionated\Nomenclature\PHPStan\Rules\Namespace_\NoHelper
 		tags:
 			- phpstan.rules.rule
+	-
+		class: Opinionated\Nomenclature\PHPStan\Rules\Namespace_\NoUtil
+		tags:
+			- phpstan.rules.rule
