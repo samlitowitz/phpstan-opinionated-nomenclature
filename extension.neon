@@ -1,3 +1,16 @@
+parametersSchema:
+	forbiddenNames: structure([
+		caseSensitive: bool(),
+		forbiddenNames: listOf(string())
+	])
+
+parameters:
+	forbiddenNames:
+		caseSensitive: false
+		forbiddenNames:
+			- Helper
+			- Util
+
 services:
 	-
 		class: Opinionated\Nomenclature\PHPStan\Rules\Class_\ClassDeclarationCollector
@@ -32,10 +45,10 @@ services:
 		tags:
 			- phpstan.rules.rule
 	-
-		class: Opinionated\Nomenclature\PHPStan\Rules\Namespace_\NoHelper
+		class: Opinionated\Nomenclature\PHPStan\Rules\Namespace_\ForbiddenNames
+		arguments:
+			caseSensitive: %forbiddenNames.caseSensitive%
+			forbiddenNames: %forbiddenNames.forbiddenNames%
 		tags:
 			- phpstan.rules.rule
-	-
-		class: Opinionated\Nomenclature\PHPStan\Rules\Namespace_\NoUtil
-		tags:
-			- phpstan.rules.rule
+
