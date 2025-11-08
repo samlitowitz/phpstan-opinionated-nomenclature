@@ -26,9 +26,9 @@
         }
     },
     "autoload-dev": {
-        "psr-4": {
-            "Opinionated\\Nomenclature\\PHPStan\\Tests\\": "tests/"
-        }
+        "classmap": [
+            "tests/Rules"
+        ]
     },
     "require": {
         "php": "^8.0",

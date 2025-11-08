@@ -1,16 +1,16 @@
 <?php
 
-namespace Opinionated\Nomenclature\PHPStan\Rules\Namespace_;
+namespace Opinionated\Nomenclature\PHPStan\Rules\ClassLike;
 
 use Opinionated\Nomenclature\PHPStan\Rules\ForbiddenNames as ForbiddenNamesTrait;
 use PhpParser\Node;
-use PhpParser\Node\Stmt\Namespace_;
+use PhpParser\Node\Stmt\ClassLike;
 use PHPStan\Analyser\Scope;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
 
 /**
- * @implements Rule<Namespace_>
+ * @implements Rule<ClassLike>
  */
 final class ForbiddenNames implements Rule
 {
@@ -21,7 +21,7 @@ final class ForbiddenNames implements Rule
         'Util',
     ];
     private const ERROR_MESSAGE = 'Forbidden name `%s`';
-    private const RULE_IDENTIFIER = 'namespace.forbiddenName.%s';
+    private const RULE_IDENTIFIER = 'classLike.forbiddenName.%s';
 
     /**
      * @param array<string> $forbiddenNames
@@ -36,12 +36,12 @@ final class ForbiddenNames implements Rule
 
     public function getNodeType(): string
     {
-        return Namespace_::class;
+        return ClassLike::class;
     }
 
     public function processNode(Node $node, Scope $scope): array
     {
-        /** @var Namespace_ $node */
+        /** @var ClassLike $node */
         $ident = $node->name;
         if (is_null($ident)) {
             return [];
