@@ -58,6 +58,14 @@ includes:
    namespace Client\helper; // bad
    ```
 
+3. Namespace names MUST NOT be equal to `Util` of any case (case-insensitive)
+
+   ```php
+   <?php
+   namespace Util; // bad
+   namespace Client\util; // bad
+   ```
+
 ### Class Like (Class, Interface, Trait)
 
 1. Class like names MUST NOT be equal to or end in `DTO` of any case (case-insensitive)
@@ -75,7 +83,14 @@ includes:
    class Helper {} // bad
    ```
 
-3. Class like names MUST NOT be equal to or start with any case (case-insensitive) of the namespace name it resides in
+3. Class like names MUST NOT be equal to `Util` of any case (case-insensitive)
+
+   ```php
+   <?php
+   class Util {} // bad
+   ```
+
+4. Class like names MUST NOT be equal to or start with any case (case-insensitive) of the namespace name it resides in
 
    ```php
    <?php
@@ -86,7 +101,7 @@ includes:
    class Request {} // bad
    ```
 
-4. Class like names MUST NOT end with their type name of any case (case-insensitive)
+5. Class like names MUST NOT end with their type name of any case (case-insensitive)
 
    ```php
    <?php
